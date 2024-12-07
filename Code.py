@@ -67,7 +67,7 @@ def chinese_postman_problem(city_area, data):
     
     return route
 
-df = pd.read_csv('data dijkstra.csv')
+df = pd.read_csv('Dijkstra_Data.csv')
 
 incinerationPlant = namedtuple('incinerationPlant', ['name', 'type', 'longitude', 'latitude'])
 
@@ -100,7 +100,7 @@ def dijkstra(start_vertex, plant_type):
 
 
 if __name__ == "__main__":
-    data = pd.read_csv('cpp.csv', delimiter=";")
+    data = pd.read_csv('CPP_Data.csv', delimiter=";")
     
     data['LONGITUDE'] = data['LONGITUDE'].str.replace(',', '.').astype(float)
     data['LATITUDE'] = data['LATITUDE'].str.replace(',', '.').astype(float)
@@ -125,7 +125,8 @@ if __name__ == "__main__":
     dijkstra_type = incinerationPlant_types[int(type_index) - 1]
     
     final_incinerationPlant, final_distance = dijkstra(start_vertex, dijkstra_type)
-    
+
+    print ("\n")
     print("Optimal route:", optimal_route)
     print("Total distance of the optimal route:", total_distance)
     print(f"The closest incineration plant of type {dijkstra_type} to the last area in the optimal route is {final_incinerationPlant} with a distance of {final_distance} km.")
