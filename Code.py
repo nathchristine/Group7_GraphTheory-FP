@@ -100,10 +100,12 @@ def dijkstra(start_vertex, plant_type):
 
 
 if __name__ == "__main__":
-    data = pd.read_csv('CPP_Data.csv', delimiter=";")
+    data = pd.read_csv('CPP_Data.csv', delimiter=",")
     
-    data['LONGITUDE'] = data['LONGITUDE'].str.replace(',', '.').astype(float)
-    data['LATITUDE'] = data['LATITUDE'].str.replace(',', '.').astype(float)
+    data.columns = data.columns.str.strip()
+    # Ensure LATITUDE and LONGITUDE are numeric
+    data['LONGITUDE'] = pd.to_numeric(data['LONGITUDE'], errors='coerce')
+    data['LATITUDE'] = pd.to_numeric(data['LATITUDE'], errors='coerce')
     
     city_area = get_city_area(data)
     
@@ -127,6 +129,7 @@ if __name__ == "__main__":
     final_incinerationPlant, final_distance = dijkstra(start_vertex, dijkstra_type)
 
     print ("\n")
-    print("Optimal route:", optimal_route)
-    print("Total distance of the optimal route:", total_distance)
+    print("Optimal route: ", optimal_route)
+    print("\nTotal distance of the optimal route:", total_distance)
+    print ("\n")
     print(f"The closest incineration plant of type {dijkstra_type} to the last area in the optimal route is {final_incinerationPlant} with a distance of {final_distance} km.")
