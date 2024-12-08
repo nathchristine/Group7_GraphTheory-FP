@@ -77,6 +77,10 @@ if __name__ == "__main__":
    print ("\n")
    print(f"The closest incineration plant of type {dijkstra_type} to the last area in the optimal route is {final_incinerationPlant} with a distance of {final_distance} km.")
 ```
+This code works as part of processing geographical data to solve a problem like the Chinese Postman Problem, which involves finding the optimal route for visiting various locations. The script starts by loading a CSV file (`'CPP_Data.csv'`) into a Pandas DataFrame. It then ensures that any whitespace around the column names is removed and converts the `LATITUDE` and `LONGITUDE` columns into numeric values to avoid errors during calculations. After preparing the data, the program prompts the user to select a specific city area from the dataset.
+
+Once the user selects a city area, the script proceeds to compute an optimal route based on the chosen area using a function like the Chinese Postman Problem (`chinese_postman_problem`). It then calculates the total distance of the optimal route by iterating through the selected locations, retrieving their latitude and longitude, and using a distance calculation function (likely the great-circle distance) to sum the distances between consecutive points.
+
 
 ### C.1 Additional Functions 
 ```py
