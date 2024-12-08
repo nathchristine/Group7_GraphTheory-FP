@@ -101,6 +101,9 @@ def get_city_area(data):
        except ValueError:
            print("Please enter a valid number.")
 ```
+This function is a helper or utility designed to interact with the user, providing them with a list of available city areas from the dataset. It starts by displaying the unique city areas from the 'CITY AREA' column in the provided data, using data['CITY AREA'].unique(). The user is then prompted to select one of these areas by entering the corresponding number.
+
+To handle potential user errors, the function uses a while loop that repeatedly asks for input until a valid response is given. If the user enters a number within the valid range (1 to the number of available areas), the function returns the selected city area. If the user enters a non-numeric value or a number outside the available range, the function catches the error and prompts the user again for a valid choice. This ensures the program only continues with a valid city area selection.
 
 ### C.2 Additional Functions 
 ```py
