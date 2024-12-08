@@ -159,6 +159,11 @@ def chinese_postman_problem(city_area, data):
   
    return route
 ```
+The Chinese postman problem code begins by filtering the dataset to focus on the rows corresponding to the selected `city_area`. If no data is available for the chosen area, the function returns a message indicating that no data is present. Otherwise, it extracts the names of the areas and their respective coordinates (latitude and longitude) into separate lists. These lists are then used to compute the pairwise distances between all areas within the selected city.
+
+The function calculates the distance between each pair of areas using the get_distance function, which computes the great-circle distance between two geographical points. These distances are stored in a dictionary, with both `(name1, name2)` and `(name2, name1)` as keys to account for both directions of travel.
+
+Next, the function selects a random starting node (area) from the available area names. The route list is initialized with this starting area, which will later be used to construct the optimal route for visiting all areas, potentially by applying an algorithm to solve the Chinese Postman Problem, though the route-building logic is not fully included in this snippet.
 
 ## Code for Dijkstra 
 ```py
@@ -183,3 +188,13 @@ def dijkstra(start_vertex, plant_type):
            min_distance = distance
 
 ```
+
+First, the Djisktra code retrieves the latitude and longitude of the `start_vertex` (the starting area) by searching for the corresponding values in the `data` dataset. This is done using the area name (`start_vertex`) and extracting the latitude and longitude from the dataset.
+
+Next, the function filters the list of `incinerationPlants` to include only those of the specified `plant_type`. This creates a subset of plants that match the desired type, narrowing down the search.
+
+The function then initializes two variables: `closest_plant`, which will store the name of the closest plant, and `min_distance`, set initially to infinity to ensure that the first distance calculated will be smaller.
+
+Using a loop, the function iterates through the filtered plants, calculating the distance from the starting point to each plant using the `get_distance` function. If a plant's distance is smaller than the current `min_distance`, the `closest_plant` and `min_distance` are updated to reflect the new closest plant and its distance.
+
+This code doesn't fully implement Dijkstra's algorithm, but it uses the basic idea of calculating the shortest distance from a start point to a target (in this case, a plant) by comparing distances and updating the closest target. It would be part of a larger system that finds the shortest path in a network of points, like the shortest route to a plant-based on distance.
