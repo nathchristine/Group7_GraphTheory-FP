@@ -5,7 +5,7 @@ Optimizing waste management in Tokyo using graph theory offers a promising appro
 
 The traditional Japanese philosophy of Mottainai which emphasizes minimizing waste and maximizing the utility of resources has also influenced the development of waste management strategies, such as heat recovery and resource recycling.
 
-# DataSet
+# Data Set
 In collecting the dataset, we prioritised finding relevant and reliable resources. Once identified, we then used Google Maps to determine the longitude and latitude of each location. 
 
 ## Data for Chinese Postman Problem (CPP)
