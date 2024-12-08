@@ -113,7 +113,9 @@ def get_distance(lat1, lon1, lat2, lon2):
    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2]) 
    return acos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(lon2 - lon1)) * R
 ```
+The `get_distance` function calculates the great-circle distance between two geographical locations based on their latitude and longitude. It begins by defining `R = 6371.0`, which represents the Earth's radius in kilometers. The function then converts the latitude and longitude of both locations from degrees to radians using the ` map(radians, [lat1, lon1, lat2, lon2])` function. This conversion is essential because trigonometric functions like sine and cosine operate in radians, not degrees.
 
+After converting the coordinates, the function uses the spherical law of cosines to compute the central angle between the two points. The formula involves the sine and cosine of the latitudes and the cosine of the difference in longitudes. The result of this calculation gives the angular distance in radians, which is then multiplied by the Earth's radius (`R`) to obtain the actual distance between the two points in kilometers. This method assumes the Earth is a perfect sphere, providing a simplified yet effective way to calculate the shortest distance over the Earth's surface between any two points.
 ## Code for Chinese Postman Problem
 ```py
 
