@@ -1,4 +1,4 @@
-# ⋆｡‧˚ʚ🗑️ɞ˚‧｡⋆ Optimizing Waste Management Disposal In Tokyo Trough Graph Theory Application
+# ♻️ Optimizing Waste Management Disposal In Tokyo Trough Graph Theory Application ♻️
 
 # Introduction
 Optimizing waste management in Tokyo using graph theory offers a promising approach to improving the efficiency of the city's complex waste disposal system. Given the historical context of Japan's waste management challenges, particularly with its limited land space and growing urban population, Tokyo has adopted a sophisticated system that integrates waste collection, transportation, recycling, and disposal. 
