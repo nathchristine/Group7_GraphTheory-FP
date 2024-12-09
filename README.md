@@ -36,6 +36,7 @@ from collections import namedtuple
 from math import acos, sin, cos, radians
 
 ```
+This code imports essential Python libraries for working with data, graphs, and mathematical computations. `pandas` is used for data manipulation, while `networkx` handles graph-based operations, such as creating and analyzing networks. The other modules, like `random`, `math`, and `heapq`, provide tools for random number generation, mathematical calculations, and priority queue operations, with some functions (e.g., trigonometric ones) assisting in geometry or optimization tasks.
 
 
 ### B. Main Function
