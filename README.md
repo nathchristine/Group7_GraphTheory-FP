@@ -116,7 +116,27 @@ def get_distance(lat1, lon1, lat2, lon2):
 ```
 The `get_distance` function calculates the great-circle distance between two geographical locations based on their latitude and longitude. It begins by defining `R = 6371.0`, which represents the Earth's radius in kilometers. The function then converts the latitude and longitude of both locations from degrees to radians using the ` map(radians, [lat1, lon1, lat2, lon2])` function. This conversion is essential because trigonometric functions like sine and cosine operate in radians, not degrees.
 
-After converting the coordinates, the function uses the spherical law of cosines to compute the central angle between the two points. The formula involves the sine and cosine of the latitudes and the cosine of the difference in longitudes. The result of this calculation gives the angular distance in radians, which is then multiplied by the Earth's radius (`R`) to obtain the actual distance between the two points in kilometers. This method assumes the Earth is a perfect sphere, providing a simplified yet effective way to calculate the shortest distance over the Earth's surface between any two points.
+After converting the coordinates, the function uses the spherical law of cosines to compute the central angle between the two points. The formula involves the sine and cosine of the latitudes and the cosine of the difference in longitudes. The result of this calculation gives the angular distance in radians, which is then multiplied by the Earth's radius (`R`) to obtain the actual distance between the two points in kilometers. This method assumes the Earth is a perfect sphere, providing a simplified
+yet effective way to calculate the shortest distance over the Earth's surface between any two points.
+
+### C.3 Additional Functions 
+```py
+
+df = pd.read_csv('Dijkstra_Data.csv')
+
+incinerationPlant = namedtuple('incinerationPlant', ['name', 'type', 'longitude', 'latitude'])
+
+incinerationPlants = [
+    incinerationPlant(name, type, longitude, latitude)
+    for name, type, longitude, latitude in zip(
+        df['Name'], df['Type'], df['Longitude'], df['Latitude']
+    )
+]
+
+```
+The code loads data into a DataFrame df from a CSV file called Dijkstra_Data.csv. The fields name, type, longitude, and latitude are then used to build a named tuple incinerationPlant. The DataFrame fields are used by the code to create a list of incinerationPlant objects. Lastly, it creates incinerationPlant_types, which contains various types of incineration plants.
+
+
 ## Code for Chinese Postman Problem
 ```py
 
