@@ -210,6 +210,8 @@ def dijkstra(start_vertex, plant_type):
            closest_plant = plant.name
            min_distance = distance
 
+   return closest_plant, min_distance
+
 ```
 
 First, the Djisktra code retrieves the latitude and longitude of the `start_vertex` (the starting area) by searching for the corresponding values in the `data` dataset. This is done using the area name (`start_vertex`) and extracting the latitude and longitude from the dataset.
