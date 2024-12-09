@@ -133,6 +133,8 @@ incinerationPlants = [
     )
 ]
 
+incinerationPlant_types = df['Type'].unique()
+
 ```
 The code loads data into a DataFrame df from a CSV file called Dijkstra_Data.csv. The fields name, type, longitude, and latitude are then used to build a named tuple incinerationPlant. The DataFrame fields are used by the code to create a list of incinerationPlant objects. Lastly, it creates incinerationPlant_types, which contains various types of incineration plants.
 
